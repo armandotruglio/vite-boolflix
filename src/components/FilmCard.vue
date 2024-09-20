@@ -15,7 +15,8 @@ export default {
         getFlag(languageCode) {
             const missingFlag = {
                 en: 'gb',
-                zh: 'cn'
+                ja: 'jp',
+                zh: 'cn',
             }
             const countryCode = missingFlag[languageCode] ? missingFlag[languageCode] : languageCode;
 
@@ -29,16 +30,16 @@ export default {
     <div class="col-12">
         <ul>
             <li>
-                {{ film.title }}
+                <h3>Titolo: {{ film.title }}</h3>
             </li>
             <li>
-                {{ film.original_title }}
+                <span>Titolo originale: {{ film.original_title }}</span>
             </li>
             <li>
                 <img :src="getFlag(film.original_language)" :alt="film.original_language">
             </li>
             <li>
-                {{ film.vote_average }}
+                <span>Voto: {{ film.vote_average }}</span>
             </li>
         </ul>
     </div>

@@ -16,15 +16,23 @@ export default {
   },
   methods: {
     searchFilm(filmTitle) {
-      axios.get(this.getApiUrl(filmTitle)).then((response) => {
-        console.log(response.data.results);
-        store.filmList = response.data.results;
-      })
-    },
-    getApiUrl(filmTitle) {
-      return `${store.apiUrl}&query=${filmTitle}`
-    }
+      axios.get(this.getApiFilmUrl(filmTitle)).then((filmResponse) => {
+        console.log(filmResponse.data.results);
+        store.filmList = filmResponse.data.results;
+      });
 
+      axios.get(this.getApiSeriesUrl(filmTitle)).then((seriesResponse) => {
+        console.log(seriesResponse.data.results);
+        store.seriesList = seriesResponse.data.results;
+      });
+
+    },
+    getApiFilmUrl(filmTitle) {
+      return `${store.apiFilmUrl}&query=${filmTitle}`
+    },
+    getApiSeriesUrl(filmTitle) {
+      return `${store.apiSeriesUrl}&query=${filmTitle}`
+    },
   }
 }
 </script>
