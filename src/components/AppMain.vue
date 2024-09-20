@@ -1,18 +1,20 @@
 <script>
+import MainFilmList from './MainFilmList.vue';
+
 export default {
     data() {
         return {
 
         }
+    },
+    components: {
+        MainFilmList,
     }
 }
 </script>
 
 <template>
-    <h1>
-        MAIN
-    </h1>
-
+    <MainFilmList />
 </template>
 
 <style scoped></style>

@@ -17,7 +17,7 @@ export default {
 <template>
     <div class="row g-3">
         <div class="col-auto">
-            <input v-model="filter" type="text" @keyup.enter="buttonClicked(filter)" class="form-control"
+            <input v-model.trim="filter" type="text" @keyup.enter="buttonClicked(filter)" class="form-control"
                 id="film-search" placeholder="Cerca Film">
         </div>
         <div class="col-auto">
