@@ -21,6 +21,9 @@ export default {
             const countryCode = missingFlag[languageCode] ? missingFlag[languageCode] : languageCode;
 
             return `https://flagsapi.com/${countryCode.toUpperCase()}/flat/64.png`
+        },
+        getImgUrl(url) {
+            return `https://image.tmdb.org/t/p/w342/${url}`;
         }
     }
 }
@@ -28,6 +31,7 @@ export default {
 
 <template>
     <div class="col-12">
+        <img :src="getImgUrl(film.poster_path)" alt="boh">
         <ul>
             <li>
                 <h3>Titolo: {{ film.title }}</h3>
