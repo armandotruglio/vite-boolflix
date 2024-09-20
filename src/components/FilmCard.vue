@@ -24,6 +24,15 @@ export default {
         },
         getImgUrl(url) {
             return `https://image.tmdb.org/t/p/w342/${url}`;
+        },
+        getStarsVote(vote) {
+            const stars = [];
+            const starsNum = Math.round(vote / 2);
+
+            for (let i = 0; i < starsNum; i++) {
+                stars.push('star')
+            }
+            return stars;
         }
     }
 }
@@ -43,7 +52,9 @@ export default {
                 <img :src="getFlag(film.original_language)" :alt="film.original_language">
             </li>
             <li>
-                <span>Voto: {{ film.vote_average }}</span>
+                <span>Voto:
+                    <i v-for="star in getStarsVote(film.vote_average)" class="bi-solid bi-star-fill"></i>
+                </span>
             </li>
         </ul>
     </div>

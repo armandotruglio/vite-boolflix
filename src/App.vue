@@ -45,4 +45,5 @@ export default {
 <style lang="scss">
 @use "./styles/general.scss" as *;
 @use "bootstrap/scss/bootstrap.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 </style>
