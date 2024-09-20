@@ -15,7 +15,11 @@ export default {
 
 <template>
     <h1>MAIN FILM LIST</h1>
-    <FilmCard v-for="film in store.filmList" :key="film.id" :film="film" />
+    <div class="container">
+        <div class="row">
+            <FilmCard v-for="film in store.filmList" :key="film.id" :film="film" />
+        </div>
+    </div>
 </template>
 
 <style scoped></style>
